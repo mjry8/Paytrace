@@ -1,0 +1,6 @@
+# Apache (XAMPP): hide secrets and internals, no folder listings.
+Options -Indexes
+DirectoryIndex index.php
+<FilesMatch "^\.(env|git)">
+    Require all denied
+</FilesMatch>

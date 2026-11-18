@@ -1,0 +1,190 @@
+:root { --ink:#1b2430; --mute:#6b7685; --line:#dfe4ea; --bg:#f5f7fa; --brand:#0b6b3a; --warn:#b45309; }
+* { box-sizing: border-box; }
+body { margin:0; font:16px/1.5 system-ui, Segoe UI, sans-serif; color:var(--ink); background: linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 100%); min-height: 100vh; }
+nav { display:flex; flex-wrap:wrap; gap:1rem; align-items:center; padding:.7rem 1.2rem; background:var(--brand); }
+nav a { color:#fff; text-decoration:none; } nav .brand { font-weight:700; font-size:1.2rem; } nav .right { margin-left:auto; }
+main { max-width:1000px; margin:1.5rem auto; padding:0 1rem; }
+h1 { margin-top:0; } .mute { color:var(--mute); }
+.card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:1rem 1.2rem; margin:1rem 0; }
+.narrow { max-width:480px; } .scroll { overflow-x:auto; }
+label { display:block; margin:.7rem 0; font-weight:600; }
+input, select, textarea { display:block; width:100%; padding:.5rem; margin-top:.25rem; font:inherit; border:1px solid var(--line); border-radius:6px; }
+button, .button { background:var(--brand); color:#fff; border:0; border-radius:6px; padding:.55rem 1rem; font:inherit; cursor:pointer; text-decoration:none; display:inline-block; }
+form.inline { display:flex; gap:.3rem; } form.inline input { margin:0; }
+table { width:100%; border-collapse:collapse; } th, td { text-align:left; padding:.45rem .6rem; border-bottom:1px solid var(--line); vertical-align:top; }
+.tiles { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:1rem; }
+.tile { background:#fff; border:1px solid var(--line); border-radius:8px; padding:1rem; color:var(--mute); }
+.tile b { display:block; font-size:1.8rem; color:var(--ink); } .tile.warn b { color:var(--warn); }
+.badge { display:inline-block; padding:.1rem .55rem; border-radius:99px; font-size:.8rem; font-weight:600; background:#e5e7eb; }
+.badge.SUCCESS, .badge.RESOLVED { background:#d1fae5; color:#065f46; }
+.badge.PENDING, .badge.TIMEOUT, .badge.OPEN { background:#fef3c7; color:#92400e; }
+.badge.FAILED, .badge.CANCELLED, .badge.FLAGGED { background:#fee2e2; color:#991b1b; }
+.flash { padding:.6rem 1rem; border-radius:6px; } .flash.ok { background:#d1fae5; } .flash.error { background:#fee2e2; }
+.banner { background:#e0f2fe; padding:.5rem 1rem; border-radius:6px; font-size:.9rem; }
+/* --- PayGuard Landing Page Styles --- */
+
+/* 1. Default light theme for all inside pages */
+body { 
+    background: #f5f7fa; 
+    color: #1b2430; 
+}
+
+/* 2. Dark theme ONLY for the homepage (pages with .hero) */
+body:has(.hero) {
+    background: #0a192f; 
+    color: #ccd6f6;
+}
+
+/* Override the light header for the landing page */
+nav { 
+    background: #112240; 
+    border-bottom: 1px solid #233554; 
+}
+nav a { color: #64ffda; }
+nav a.brand { color: #fff; font-size: 1.5rem; }
+
+/* Override the light header for the landing page */
+nav { background: #112240; border-bottom: 1px solid #233554; }
+nav a { color: #64ffda; }
+nav a.brand { color: #fff; font-size: 1.5rem; }
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.hero-text { flex: 1; }
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.hero-text h1 span { color: #64ffda; } /* Highlight color */
+.hero-text p {
+    font-size: 1.2rem;
+    color: #8892b0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Modern Buttons */
+.btn-primary {
+    background: #64ffda;
+    color: #0a192f;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.2s, background 0.2s;
+    display: inline-block;
+}
+.btn-primary:hover { background: #fff; transform: translateY(-2px); }
+
+.btn-secondary {
+    background: transparent;
+    color: #64ffda;
+    border: 1px solid #64ffda;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    transition: background 0.2s;
+    display: inline-block;
+}
+.btn-secondary:hover { background: rgba(100, 255, 218, 0.1); }
+
+/* The CSS Wallet Graphic */
+.hero-graphic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.css-wallet {
+    width: 320px;
+    height: 200px;
+    background: linear-gradient(135deg, #112240 0%, #1a365d 100%);
+    border-radius: 16px;
+    border: 1px solid #64ffda;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* The Wallet Clasp */
+.css-wallet::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 20px;
+    background: rgba(100, 255, 218, 0.1);
+    border-radius: 20px;
+}
+
+/* The Transaction Card sliding out */
+.css-card {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    width: 280px;
+    height: 160px;
+    background: linear-gradient(135deg, #64ffda 0%, #0ea5e9 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+.css-wallet:hover .css-card { transform: rotate(0deg) translateY(-10px); }
+
+.css-card .chip {
+    width: 40px;
+    height: 30px;
+    background: #e2e8f0;
+    border-radius: 6px;
+}
+.css-card .amount {
+    color: #0a192f;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+/* Features Section */
+.features {
+    background: #112240;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.features h2 { color: #fff; font-size: 2rem; margin-bottom: 3rem; }
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.feature-card {
+    background: #0a192f;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #233554;
+    text-align: left;
+}
+.feature-card h3 { color: #64ffda; margin-top: 0; }
+.feature-card p { color: #8892b0; margin-bottom: 0; }

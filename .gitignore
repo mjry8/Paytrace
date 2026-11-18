@@ -1,0 +1,20 @@
+# Ignore environment secrets
+.env
+.env.*
+!.env.example
+
+# Ignore SQLite databases
+*.db
+*.sqlite
+
+# Ignore VS Code workspace settings
+.vscode/
+
+# Ignore Python virtual environment (since you installed Python earlier)
+.venv/
+__pycache__/
+*.pyc
+
+# Ignore system files
+Thumbs.db
+.DS_Store
